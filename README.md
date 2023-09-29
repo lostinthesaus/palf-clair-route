@@ -20,7 +20,7 @@ This mod offers a Level 2 scene for Clair, the not-so beloved Dragon-type teache
 
 This mod does the following: it puts Clair in the Battle Academy as a potential hang out character (once certain requirements are met) and gives her a Level 2 scene. It also makes you gain a point with her while taking her class, similar to other routes. In addition, it includes a new audio track for you to jam to while doing her scene. All of these things can be utilized to potentially create your own fully-featured new character route mod, too. Eventually, once I migrate over to the mod manager, the intention is to build another walkthrough like my last one on how to do this stuff.
 
-##F.A.Q. (Spoiler Warning)
+## F.A.Q. (Spoiler Warning)
 
 **The battle with Clair is impossible!**
 Clair is literally the 8th gym leader of the 2nd generation games. She's supposed to be difficult to fight. You've also only had 5 weeks to train and build your little rats, so I wouldn't anticipate an easy victory. The route continues regardless of a win here (though if I continue the route later scenes might have stricter requirements.) Yeah, she uses a water strategy, it's weird for her. Don't judge her, okay? She's going through a really rough patch.
