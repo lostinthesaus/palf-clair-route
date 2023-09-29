@@ -1,7 +1,7 @@
 ##Shepurd Clair Route##
 init python:
     def ClairHasUnseenScene():
-        if (GetCharValue("Clair") >= 5 and GetRelationship("Clair") != "Rascal" and personalstats["Courage"] >= 3 and personalstats["Charm"] >= 3):
+        if (GetCharValue("Instructor Clair") >= 10 and personalstats["Courage"] >= 3 and personalstats["Charm"] >= 3 and GetRelationship("Instructor Clair") != "Frustration"):
             return "ShepClair_1"
         return False
 
@@ -11,6 +11,7 @@ default shepclair_motivation = ""
 
 scene stadium_empty
 with Dissolve(2.0)
+
 queue music "Audio/Music/shepclair_pilgrimage.mp3"
 
 show screen songsplash("Pilgrimage", "Takeru Kanazaki")
@@ -37,132 +38,156 @@ clair "Dee-Dee, Dragon Pulse."
 
 narrator "The Dragonair sends out a beam of pure energy; the Gyarados takes the full force of it; while she doesn't faint, the Gyarados seems to be on her last legs."
 
-narrator "Clair tosses out a PokéBall. The Gyarados is returned, leaving only Clair and the Dragonair."
+$ PlaySound("pokemon/ball sound.ogg")
+narrator "Clair tosses out a Poké Ball. The Gyarados is returned, leaving only Clair and the Dragonair."
 
 show clair thinking
 
 narrator "Clair stands for a moment, rubbing her chin deep in thought."
 
-red @happy "{b}Dee-Dee{/b}?"
+red @happy "Dee-Dee?"
 
 clair @blush surprised "What?"
 pause 1.0
 show clair angry with dis
 
-narrator "Clair tosses a second PokéBall out, retrieving 'Dee-Dee'."
+$ PlaySound("pokemon/ball sound.ogg")
+narrator "Clair tosses a second Poké Ball out, retrieving 'Dee-Dee'."
 
 clair angry "Must you stalk in the shadows? A true trainer wouldn't behave in such a manner."
 
 if (classstats["Poison"] >= 1):
     clair @thinking "It must be that coward Koga's influence."
 
-red @angry "If you invited me here for another lecture, I think I'll pass."
+clair angry "Battles are meant to be face to face; you must see the white in the eyes of your opponent if you are to get the proper measure of them."
+clair happy "And what better place to be then atop of a mighty Dragon Pokémon?"
 
-clair sad "No, I recognize I do that far too often in class anyways."
+red @surprised "Uh, probably not in immediate dang-{w=0.2}{nw}"
 
-pause 0.5
+clair angry "Nowhere. The only way to reach the heights of Pokémon Champion is atop the strongest of them all. {nw}"
+clair happy "The greatness of the Dragon-type Pokémons can't be understated, after all they have all the advantages of -{nw}"
 
-clair neutralbrow neutralmouth "Your standoff with Lance is legendary in the teacher's lounge."
+hide clair with dis
 
-red @surprised "Huh?"
+pause 1.0
+clair "Hey!"
 
-clair @angry "When you were there for Janine's fight. He approached you, and tried to talk you down about your treatment of your Pikachu."
+show clair surprised with dis
 
-clair @thinking "Anyone else would've fallen apart in front of him and his imposing presence, but not you."
+clair surprised "Where do you think you're going?"
+
+red @angry "Sorry, figured I could catch the rest of this at next class."
+
+clair thinking "..."
+clair sad "I apologize. This is not why I asked you out here."
+
+red @angry "Then what {i}is{/i} the reason I'm here right now?"
+
+clair thinking "...Your standoff against Lance is legendary in the teacher's lounge."
+clair neutral "It's not every day a student who has no real battle experience stands up to him."
 
 red @sad "That's because Silver stood up fo-{w=0.2}{nw}"
 
 clair "Not immediately. Before that happened, you faced him down. A champion in this league, and you a pipsqueak."
 
-clair angry "You understand that he is absolute power, something you cannot hope to defeat?"
+clair angry "My cousin is the pinnacle of what Kobukan Academy can make. He consistently wins, has an incredible tactical sense, and an actual champion."
 
-pause 1.0
+clair thinkingbrow talkingmouth "You have what, exactly? A few intramural wins?"
 
-narrator "It seems this was for once not a rhetorical question."
+clair neutral "You're not the first trainer to believe they can break the mold."
 
-red @angry "You're a teacher, so I don't really think we should be having this conversation."
+extend @sad "..and you'll either end up a nobody, or recognize the flaws in your logic."
 
-clair "Right now, I am a fellow trainer. You will treat me as such."
+red @thinking "Starting to sound like a lecture again..."
 
-red @angry "Then, you should know that your attitude is complete crap."
+clair angry "I say all this only to offer you a warning, [first_name]. If you persist with your foolish notion of 'friendship', you will only find the road a painful one."
+clair thinking @talkingmouth "You clearly have some talent. It would be a shame if it was wasted, you understand?"
 
-show clair surprised
+red @thinking "..."
+redmind @surprised "Huh, that wasn't a rhetorical question for once."
+red @angry "...Nope."
 
-extend @angry ".. and so is Lance's whole philosophy."
+clair thinking "Good, I would therefore like-{w=0.2}{nw}"
+clair surprised "Huh?"
 
-red @thinking "Pokémon aren't just weapons. They're living creatures, and ignoring that makes you a weaker trainer."
+red @neutral "Respectfully, Instructor Clair, I don't think you're right."
+
+red @thinking "Pokémon battles aren't just about who or what is the strongest. They're living creatures, and ignoring that makes you a weaker trainer."
 
 if (classstats["Dark"] >= 1):
     clair @thinking "I see you have been taking Karen's lessons to heart."
 
     clair @sad "Hmph. She never stops believing in her Pokémon..."
 
-    clair "Even still..."
+clair sad "A naive perspective. Expected of a new student, but not one that hopes to win any titles."
 
-clair angry "Lance has a proven track record. Uses the strongest Pokémon, with the most intense battle tactics, and he wins time and time again."
+red @angry "Why do you care?"
 
-##This section will need touchups to account for QQs, and potentially other big win moments in the game. ATM, I'm 2 lazy OMEGALUL
+clair angry "Because I-"
 
-clair "You, on the other hand, have what? A few intramural wins at best?"
+show clair surprised
+pause 0.5
+show clair angry
 
-clair @sad "Every duelist starts out believing what you do. Then they lose their first {b}real{/b} match, and they begin to understand the way the world works."
+clair thinking "I am your teacher. Am I not supposed to be concerned with the success of my students?"
 
-clair "There's no room for hesitation, no room for affe-{w=0.2}{nw}"
+red @angry "Not like this. Clearly something else is going on here."
 
-red @angry "Booooooring."
+pause 0.5
+
+red @thinking "Look, I'm not taking your classes because I believe in Dragon-type supremacy or whatever. I'm taking them because I have a need to train Dragon-type Pokémon."
+
+red @neutral "Honestly, if it wasn't for that, I'd be taking another elective."
+
+show clair sad
+
+red @angry "All day, every day, it's completely one-note. Dragons aren't the end all be all. They have weaknesses, just like any other type."
 
 show clair surprised
 
-red @surprised "Sorry, we're talking candidly, right?"
+red @happy "That's the beauty of Pokémon, right? It's all about forming bonds, accounting for weaknesses, and doing the best that you can."
 
-clair "R-Right."
+clair @blush "I..."
 
-red @happy "Not gonna let you lecture me, then."
+pause 0.2
 
-### Edits for big wins/having had a {b}real{/b} lost should go here.
+extend -thinkingbrow angrymouth " cannot believe you will continue this irrational behavior."
 
-red @thinking "I will prove Lance wrong."
+red @angry "Fine, let me prove it."
 
-red neutral "[pika_name] and I will beat him."
+clair thinking "..."
 
-pause 1.0
+clair @happymouth "Good to see some part of my lessons have taken hold."
 
-clair thinkingbrow smilemouth "You really believe that, don't you?"
+red neutral "I would hope not all of your Pokémon are injured from when you were playing chess by yourself?"
 
-if (WonBattle("Instructor Clair3")):
-    clair happy "You have consistently bested my class challenges, so I suppose there might be some truth to what you say..."
+clair angrybrow talkingmouth "Yes, I might have one available."
 
-elif (WonBattle("Instructor Clair2")):
-    clair neutral "You have shown some skill in class so far..."
+if (WonBattle("Instructor Clair2")):
+    clair thinking "We've battled a few times in class, and you've done well there..."
 
-clair angry "Prove it."
+elif (WonBattle("Instructor Clair1")):
+    clair neutral "You may have faced a test of mine before, but..."
 
-red @surprised "W-what? Here? Now?"
+clair angrybrow happymouth "Let's see how your ideals stand up to me truly!"
 
-clair @thinking "We may be speaking as fellow trainers, but I am still a teacher here."
-
-clair "I will not be made a fool of."
-
-red @neutral "Aren't your Pokémon injured from when you were playing chess with them?"
-
-clair @thinking "..."
-
-extend @smilemouth "I have others."
-
-clair @happy "Show me you have what it takes!"
-
-$ trainer1 = Trainer("red", TrainerType.Player, [Pokemon(610, level=22, moves=[GetMove("Legacy"), GetMove("Dragon Dance"), GetMove("Bite"), GetMove("Taunt")])])
+$ trainer1 = Trainer("red", TrainerType.Player, playerparty)
 $ trainer2 = Trainer("clair", TrainerType.Enemy, [
-    Pokemon(610, level=22, moves=[GetMove("Legacy"), GetMove("Dragon Dance"), GetMove("Bite"), GetMove("Taunt")])
+    Pokemon(230, level=32, moves=[GetMove("Rain Dance"), GetMove("Draco Meteor"), GetMove("Surf"), GetMove("Ice Beam")], ability="Swift Swim", intelligence=2)
 ])
 
 call Battle([trainer1, trainer2], reanchor=[False, False], uniforms=[True, False]) from _shep_call_Battle_1 ##Gotta call my own battles
 $ gymbattles["ShepClair_1"]  = _return
     
 show clair with dis
+queue music "Audio/Music/shepclair_pilgrimage.mp3"
 
 if (WonBattle("ShepClair_1")):
-    clair @happy "..."
+    clair surprised "I..."
+
+    pause 0.3
+
+    clair thinkingbrow @talkingmouth "...Interesting."
 
     clair neutral "We should see to your Pokémon."
 
@@ -173,10 +198,38 @@ if (WonBattle("ShepClair_1")):
 
     clair "I see now you can put your Pokémon where your mouth is."
 
-    clair thinking "Hmm..."
+    red "You starting to believe me now?"
+
+    clair neutralbrow happymouth "I am not a Champion. This doesn't truly prove anything."
+
+    red @thinking "No, but that's what this is about, isn't it?"
+
+    clair surprised "What?"
+
+    red @thinking "You mentioned before that Lance is your cousin. You grew up with him, didn't you?"
+
+    clair thinking ".{w=0.2}.{w=0.2}.{w=0.2}"
+
+    clair "Yes."
+
+    red @thinking "I grew up with Blue. You could say we have a rivalry that has come from that time."
+
+    red @angry "He put me in a really crap spot back in the day, and it's taken me a long time to forgive him for it."
+
+    red @thinking "Lance... he's a rival to you too, isn't he?"
+
+    show clair sad
+
+    pause 0.35
+
+    show clair thinking
+
+    $ ValueChange("Instructor Clair", 1, -0.5)
+
+    clair thinking "...Hmm."
 
 else:
-    show clair surprised
+    show clair sad
 
     redmind @angry "...Damn it."
 
@@ -185,19 +238,21 @@ else:
     pause 1.0
     $ HealParty()
 
-    $ shepclair_motivation == "Stubborn"
+    $ shepclair_motivation == "stubborn"
         
     red @sad "Look, this wasn't a great showing for me, but if you just hear me out..."
 
-    clair angry "Stubborn."
+    clair angry "{b}Stubborn{/b}."
 
-    clair "That is what motivates you. Not genuine faith, not actual skill, but unrelenting stubbornness."
+    red @surprised "What?"
 
-    clair thinkingbrow @angrymouth "In the face of reality, you continue to push against it."
+    clair "That is what drives you and your foolish ideals. Not actual skill, but unrelenting stubbornness."
 
-    clair @sadmouth "How I envy that."
+    clair thinkingbrow @angrymouth "In the face of reality, you wage an unwinnable war against it."
 
-    extend @angrymouth "... and how incredibly pedestrian."
+    clair @sadmouth "How I envy that.{w=0.2}{nw}"
+
+    extend @angrymouth ".. and how incredibly pedestrian."
         
     redmind @thinking "..."
     clair neutral "We are done here."
@@ -208,164 +263,85 @@ else:
 
     clair angry "...{i}{b}Again?{/b}{/i}"
 
-    red @thinking "There has to be some reason you're so keen on Lance's interactions with me."
+    red @thinking "There has to be some reason you're so invested in Lance's interactions with me."
 
-    red @neutral "Then you're talking about what motivates me to stand up to him."
+    red @neutral "Then you're talking about what motivates me to follow my ideals."
 
     red @angry "You were in my shoes once, weren't you?"
 
-    clair thinking "...{i}Unbelievable{/i}."
+    clair thinking @talking2mouth "...Unbelievable."
 
     pause 1.0
 
     $ ValueChange("Instructor Clair", 1, -0.5)
 
-clair "Lance is my cousin. We grew up together in Blackthorn City."
+    pause 0.25
+
+clair neutral "I asked you out here to do two things. To warn you, and to test you."
+
+clair thinking "I have attempted both of those things... and yet, it seems I have failed in both regards."
+
+clair @talking2mouth "You have disregarded my warning, and rather than learn anything, you instead try to dig into my past."
+
+if (not IsBefore(30, 4, 2024)):
+    clair "Your 'ability' might help you to do so with your classmates, but it will not work with me."
+
+red @surprised "I'm just trying to figure out why it matters to you!"
+
+clair angry "Let us not forget you sullied Dragon-types with your rhetoric as well!"
+
+redmind @sad "Man, we almost made it without any more of that..."
+
+clair @thinkingbrow "You are immensely {color=#5a94c6}frustrating{/color}! If you are going to have {i}any{/i} hope of beating Lance, we are going to need to work on a great many things."
+
+clair thinking "We simply will not have enough time in class to do so."
+
+clair neutral "You will find time to meet with me outside of it."
+
+red @surprised "Hold up, we're going to train? What if I refuse?"
+
+clair surprised "I am offering you an opportunity to learn one on one from the former eighth gym leader of Johto."
+
+redmind @thinking "It is a rather good deal..."
 
 pause 0.5
 
-clair thinkingbrow sadmouth "You and your Pikachu, you feel like you've known them forever, right?"
-
-red @thinking "Yes."
-
-clair @sadbrow "That's how I felt with my first Dratini."
-
-clair @smilebrow "She used to wrap herself around my neck like a scarf, and we'd go on little adventures."
-
-red @surprised "A Dratini as a scarf? Those things are like 6 feet long!"
-
-clair angry "It was a baby, not important."
-
-clair @sadbrow "We were inseparable. I'd earn her by passing the Dragon's Den test, which was all about loving your Pokémon and treating them with kindness."
-
-red @neutral "I'm surprised Lance was able to pass that test too."
-
-##ALERT ALERT WARNING NON-CANON LORE AHEAD, PROCEED WITH CAUTION##
-
-clair thinking "{w=0.2}.{w=0.2}.{w=0.2}."
-
-pause 1.0
-
-clair "He didn't."
-
-clair "He refused to accept their teachings. He believed that only strength made a trainer unbeatable. He never bothered with the quiz. Instead, he got an old fishing rod and started hunting for a Dratini of his own."
-
-clair "Once he did, he then proceeded to use that Dratini to build a team of his own."
-
-clair angry "Eventually he wound up back at the Dragon's Den, there to prove them wrong. Not for a reward, but for purely validation. To his credit, he won."
-
-clair "Every single disciple was no match for him. He was intelligent, quick, and extremely capable."
-
-clair @sad "...seeing Dee-Dee unconscious on the floor for the first time..."
-
-clair "When something like that happens... when everything you've ever believed in is absolutely and utterly crushed in front of your very eyes..."
-
-clair sad "How can you not doubt your convictions?"
-
-narrator "Her eyes start to water, but with what can only be sheer willpower they dry up before you can even be certain it was happening."
-
-if (shepclair_motivation == "Stubborn"):
-    clair sadbrow smilemouth "{b}Stubbornness{/b}. That's how you do it, right? Even when there's nothing left but pieces, you will yourself and pick them up and start putting things back together."
-
-    red @sad "You keep calling it being stubborn, but I see it as more like simply not giving up."
-
-    red @neutral "[pika_name] might not be the strongest Electric-type. They might not even be a very strong Pokémon."
-
-    red @happy "But they're my friend. I won't start doubting [pika_name], just like I wouldn't doubt any of the other Pokémon I have."
-
-    red @thinking "It may take a hundred tries. It may take my whole life... but I won't stop trying."
-
-else:
-    menu:
-        "{color=#ff8412}Because I can't slow down and let it get to me.":
-            $ shepclair_motivation == "Instinctive"
-            show clair surprised
-
-            red @happy "I was incredibly lucky to be able to attend this school. So far, I think I'm doing alright."
-
-            red @thinking "If I let myself get clouded by doubt over some egotistical champion's belief that I'd fail, I would be throwing away everything I've worked for."
-
-            clair @blush -sadbrow happymouth "Heh... why am I not surprised?"
-
-            clair thinkingbrow @happymouth "It's because it's {b}instinctive{/b} for you."
-
-            clair "You could be staring death in the face and you wouldn't crack, because that's how it is."
-
-            clair "No room for doubt because doubt is..."
-
-            red @happy "A waste of time."
-
-            clair @happy "Right. A waste of time."
-            
-        "{color=#e226a6}Because I know that I'm doing the right thing.":
-            $ shepclair_motivation == "Trusting"
-            show clair surprised
-
-            red @neutral "I may suffer a few defeats in battles, but I haven't really lost anything."
-
-            red @thinking "I gained valuable experience, perhaps a new rival, and almost certainly a new goal to reach."
-
-            red @thinking "None of that changes who I am and what I believe unless I let it."
-
-            red @neutral "At the end of the day, why should anyone but me decide who I am?"
-
-            clair @blush -happybrow "It's {b}trust{/b} then. Trust in your Pokémon, trust in your skills..."
-
-            red @happy "Trust in myself."
+red @thinking "...One condition. You leave the long lecturing for class. Outside? I have a little more respect for my time than to keep going through this."
 
 show clair thinking
 
-red @sad "Saying it out loud, it kind of sounds a little like how Lance used to be when he was younger..."
+pause 0.25
 
-clair @angry "No. Lance was fueled by arrogance. That is what he drew from. You, on the other hand, draw it from something else."
+clair neutral "Only if you assure me you will not let my leniency outside permit you to shirk your duties for my class."
 
-if (IsBefore(30, 4, 2024)):
-    redmind @thinking "Maybe it has something to do with Frienergy? Not that she would know about that."
+red @neutral "Deal."
 
+clair thinking "..."
+extend neutral " Deal."
+
+clair "Unfortunately, I have a few matters to attend to now. This will be our meeting spot for the time being."
+
+if (WonBattle("ShepClair_1")):
+    clair thinking talkingmouth "{i}Maybe it is possible...{/i}"
 else:
-    clair @angrybrow talking2mouth "Perhaps it comes from that... ability of yours."
+    clair thinking "{i}The stubbornness will probably prove entertaining, if nothing else...{/i}
+    "
+hide clair with dis
+pause 1.0
 
-pause 0.5 
-
-clair thinkingbrow "There's only two other people I've truly been this honest with before..."
-
-clair @happymouth "...Interesting."
-
-pause 0.5
-
-clair @angry "Let me make one thing abundantly clear: my class time will continue to be where you learn."
-
-clair "Don't think me opening up to you is your ticket out of assignments or responsibilities."
-
-red @surprised "I wouldn't even consider it that way."
-
-clair @thinkingbrow talkingmouth "Good."
-
-show clair sadbrow happymouth
-
-clair "Even if I don't fully believe you will win, it is almost too fascinating to look away from."
-
-clair @thinkingbrow "It would seem that I have things to learn from you, [first_name]."
-
-red neutral "Happy to have helped, Instructor."
-
-clair "I would like to hear more about how you and [pika_name] spend time together."
-
-red @happy "Only if I get to hear more about Lil' Cee-Cee and Dee-Dee's Adventures."
-
-clair @surprised "'{i}Cee-Cee{/i}'?"
-
-extend @blush ".{w=0.2}.{w=0.2}.{w=0.2}"
-
-extend @happy "Fine, you {color=#0EFFFF}rascal{/color}."
-
-$ persondex["Instructor Clair"]["Relationship"] = "Rascal"
-$ persondex["Instructor Clair"]["RelationshipRank"] = 1
+redmind @surprised "...What have I just signed myself up for?"
 
 $ renpy.music.set_volume(0.1, delay=0.0, channel="music")
+pause 0.2
 play sound "audio/sav.wav"
 $ renpy.music.set_volume(1.0, delay=1.0, channel="music")
 
-narrator "Your heart shifts as you feel your relationship with Clair evolve from '{color=#0EFFFF}Student{/color}' to '{color=#0EFFFF}Rascal{/color}'!"
+$ persondex["Instructor Clair"]["Relationship"] = "Frustration"
+$ persondex["Instructor Clair"]["RelationshipRank"] = 1
+
+narrator "Your heart shifts as you feel your relationship with Clair evolve from '{color=#5a94c6}Student{/color}' to ...'{color=#5a94c6}Frustration{/color}'?"
+
+redmind @thinking "{w=0.2}.{w=0.2}.{w=0.2}."
+red @happy "Heh, 'Dee-Dee'."
 
 return
