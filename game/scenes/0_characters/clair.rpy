@@ -7,8 +7,6 @@ init python:
 
 label ShepClair_1:
 
-default shepclair_motivation = ""
-
 scene stadium_empty
 with Dissolve(2.0)
 
@@ -107,7 +105,7 @@ red @thinking "..."
 redmind @surprised "Huh, that wasn't a rhetorical question for once."
 red @angry "...Nope."
 
-clair thinking "Good, I would therefore like-{w=0.2}{nw}"
+clair thinking "Good, I would therefore like-{w=0.4}{nw}"
 clair surprised "Huh?"
 
 red @neutral "Respectfully, Instructor Clair, I don't think you're right."
@@ -141,7 +139,7 @@ red @neutral "Honestly, if it wasn't for that, I'd be taking another elective."
 
 show clair sad
 
-red @angry "All day, every day, it's completely one-note. Dragons aren't the end all be all. They have weaknesses, just like any other type."
+red @angry "All day, every day, it's the same lecture. Dragons aren't the end all be all. They have weaknesses, just like any other type."
 
 show clair surprised
 
@@ -157,9 +155,9 @@ red @angry "Fine, let me prove it."
 
 clair thinking "..."
 
-clair @happymouth "Good to see some part of my lessons have taken hold."
+clair @happymouth "It's good to know you express the values of a Dragon-type."
 
-red neutral "I would hope not all of your Pokémon are injured from when you were playing chess by yourself?"
+red neutral "Yeah yeah, you got any Pokémon not badly wounded?"
 
 clair angrybrow talkingmouth "Yes, I might have one available."
 
@@ -173,7 +171,7 @@ clair angrybrow happymouth "Let's see how your ideals stand up to me truly!"
 
 $ trainer1 = Trainer("red", TrainerType.Player, playerparty)
 $ trainer2 = Trainer("clair", TrainerType.Enemy, [
-    Pokemon(230, level=32, moves=[GetMove("Rain Dance"), GetMove("Draco Meteor"), GetMove("Surf"), GetMove("Ice Beam")], ability="Swift Swim", intelligence=2)
+    Pokemon(230, level=50, moves=[GetMove("Rain Dance"), GetMove("Draco Meteor"), GetMove("Surf"), GetMove("Ice Beam")], ability="Swift Swim", intelligence=2)
 ])
 
 call Battle([trainer1, trainer2], reanchor=[False, False], uniforms=[True, False]) from _shep_call_Battle_1 ##Gotta call my own battles
@@ -194,7 +192,7 @@ if (WonBattle("ShepClair_1")):
     pause 1.0
     $ HealParty()
 
-    $ ValueChange("Instructor Clair", 1, -0.5)
+    $ ValueChange("Instructor Clair", 1, 0.55)
 
     clair "I see now you can put your Pokémon where your mouth is."
 
@@ -224,8 +222,6 @@ if (WonBattle("ShepClair_1")):
 
     show clair thinking
 
-    $ ValueChange("Instructor Clair", 1, -0.5)
-
     clair thinking "...Hmm."
 
 else:
@@ -237,8 +233,6 @@ else:
 
     pause 1.0
     $ HealParty()
-
-    $ shepclair_motivation == "stubborn"
         
     red @sad "Look, this wasn't a great showing for me, but if you just hear me out..."
 
@@ -250,7 +244,7 @@ else:
 
     clair thinkingbrow @angrymouth "In the face of reality, you wage an unwinnable war against it."
 
-    clair @sadmouth "How I envy that.{w=0.2}{nw}"
+    clair @sadmouth "How I envy that.{w=0.2}"
 
     extend @angrymouth ".. and how incredibly pedestrian."
         
@@ -265,7 +259,7 @@ else:
 
     red @thinking "There has to be some reason you're so invested in Lance's interactions with me."
 
-    red @neutral "Then you're talking about what motivates me to follow my ideals."
+    red @neutral -angrymouth "Then you're talking about what motivates me to follow my ideals."
 
     red @angry "You were in my shoes once, weren't you?"
 
@@ -273,15 +267,15 @@ else:
 
     pause 1.0
 
-    $ ValueChange("Instructor Clair", 1, -0.5)
+    $ ValueChange("Instructor Clair", 1, 0.55)
 
     pause 0.25
 
-clair neutral "I asked you out here to do two things. To warn you, and to test you."
+clair neutral "I asked you out here to do one thing. To warn you about the path you are on."
 
-clair thinking "I have attempted both of those things... and yet, it seems I have failed in both regards."
+clair thinking "It seems I have failed."
 
-clair @talking2mouth "You have disregarded my warning, and rather than learn anything, you instead try to dig into my past."
+clair @talking2mouth "You have disregarded my warning, and tried to interrogate me on my past."
 
 if (not IsBefore(30, 4, 2024)):
     clair "Your 'ability' might help you to do so with your classmates, but it will not work with me."
@@ -324,10 +318,11 @@ clair "Unfortunately, I have a few matters to attend to now. This will be our me
 if (WonBattle("ShepClair_1")):
     clair thinking talkingmouth "{i}Maybe it is possible...{/i}"
 else:
-    clair thinking "{i}The stubbornness will probably prove entertaining, if nothing else...{/i}
+    clair thinking talkingmouth "{i}Their stubbornness will at least prove entertaining, if nothing else...{/i}
     "
 hide clair with dis
-pause 1.0
+
+pause 2.0
 
 redmind @surprised "...What have I just signed myself up for?"
 

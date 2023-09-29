@@ -348,7 +348,7 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         red @thinking "Hm... that they're superior creatures, in every way, shape, and form?"
 
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
 
             clair @happy "Good! You've been listening to my lectures. Now, what is the most important thing to remember when interacting with any Pokémon, of any type?"
 
@@ -370,7 +370,7 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
             red uniform @happy "I don't think so."
 
-            clair @sadbrow @happymouth "{size=30}Inconcievably frustrating...{/size}"
+            clair @sadbrow -happymouth "{size=30}Inconcievably frustrating...{/size}"
 
             clair angry @talking2mouth "Regardless of that, it's doubly important for interacting with the truly awe-inspiring Dragon-types!"
 
@@ -414,7 +414,7 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         show sideportraitfull at pokeball, dormdesk
 
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
             "{color=#0000ff}Dee-Dee{/color}" "Dra..."
 
             red uniform @happy "Well hey there, you must be Dee-Dee!"
@@ -425,11 +425,11 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
             "{color=#0000ff}Dee-Dee{/color}" "Dra!"
 
-            clair @blush @surprisedbrow @angrymouth "Dee-Dee!"
+            clair @blush -surprisedbrow -angrymouth "Dee-Dee!"
 
             red uniform @happy "I think that's a yes, Instructor."
 
-            clair @blush @sad "...I have made a grave mistake."
+            clair @blush -sad "...I have made a grave mistake."
 
             red uniform @happy "Well Dee-Dee, I think you're a real strong Pokémon, aren't you? I've bet you've won plenty of battles."
 
@@ -464,7 +464,7 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         pause 2.0
 
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
             
             narrator "Dee-Dee seems extraordinarily pleased, and bows her head at you. Instructor Clair's brow could not be more furrowed."
 
@@ -476,7 +476,7 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
             red uniform @confused "So... besides messing with you, what was the point of this?"
 
-            clair @thinking @talkingmouth "A chance to speak with an actually strong Pokémon."
+            clair @thinking -talkingmouth "A chance to speak with an actually strong Pokémon."
 
             pause 0.5
 
@@ -547,14 +547,14 @@ elif (3.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         clair @happy "Hm! It seems you are worthy of this Dragon Fang, after all!"
 
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
             red uniform @happy "Didn't Dee-Dee already give it to me, though? Are you second-guessing her?"
 
-            clair @blush @surprised "Wh--"
+            clair @blush -surprised "Wh--"
 
             pause 0.5
 
-            clair @blush @angry "Imbecile."
+            clair @blush -angry "Imbecile."
 
             clair @blush thinking "You will erase that name from your memory."
 
@@ -622,7 +622,7 @@ elif (4.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         clair @closedbrow talkingmouth "I was not sure about you at first, [first_name]. My cousin's reports on your character were frequent, and uncomplimentary."
         
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
 
             clair @thinkingbrow happymouth "But, we've already discussed our intentions about that."
 
@@ -642,7 +642,7 @@ elif (4.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
             red uniform @surprised "Uh... I don't know if I'm ready to face down another one of your Pokémon..."
 
-            clair @thinkingbrow @angrymouth "Pfft. That was a special test, this one will follow the rubric outlined."
+            clair @thinkingbrow -angrymouth "Pfft. That was a special test, this one will follow the rubric outlined."
 
             if (WonBattle("ShepClair_1")):
                 
@@ -709,7 +709,7 @@ elif (4.1 not in persondex["Instructor Clair"]["ClassesKnown"] and classstats["D
 
         pause 0.5
 
-        if (GetRelationshipRank("Instructor Clair") > 1):
+        if (GetRelationshipRank("Instructor Clair") >= 1):
             clair @thinking "...Maybe, maybe not. You'll have to wait and see."
         else:
             clair @talking2mouth "Don't ask foolish questions."
@@ -732,7 +732,7 @@ else:#generic scene
     hide clair with dis
     show clairbg with dis
     
-    if (GetRelationshipRank("Instructor Clair") > 1):
+    if (GetRelationshipRank("Instructor Clair") >= 1):
 
         clair "Dragon-types are a very powerful typing of Pokémon. It requires an incredibly strong trainer to wield them at full strength."
 
@@ -771,7 +771,7 @@ else:#generic scene
             redmind @neutral "..."
             extend @surprised " yeah, better make sure I have the {color=#ff8412}courage{/color} to do this too. She's likely to yell my ear off or {b}challenge me to a battle{/b}."
 
-    elif (GetCharValue("Instructor Clair") > 10 and GetRelationshipRank("Instructor Clair") > 1):
+    elif (GetCharValue("Instructor Clair") > 10 and GetRelationshipRank("Instructor Clair") >= 1):
         narrator "Instructor Clair constantly gives you a side-eye, a judging look in it."
         $ ValueChange("Instructor Clair", 1, -0.5)
 

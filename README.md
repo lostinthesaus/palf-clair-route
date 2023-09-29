@@ -7,6 +7,8 @@ A.K.A:
 
 This mod offers a Level 2 scene for Clair, the not-so beloved Dragon-type teacher. This is literally the first time I've done a writing project for something outside of school, so I'm confident it's 100% perfect.
 
+This is a highly WIP release that was pushed out due to certain circumstances meaning I won't be able to work much on this for a period of time. Anticipate possible re-writes to the very scene included here.
+
 ## Mod Installation
 ### Requirements
 > Version 8.21b.23 of PAL:F
