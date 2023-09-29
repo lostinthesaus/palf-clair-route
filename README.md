@@ -1,7 +1,12 @@
 # Clair Route
 
 A.K.A:
+<<<<<<< HEAD
 ![Everybody Hates Clair](/branding.png)
+=======
+
+![Everybody Hates Clair](branding.webp)
+>>>>>>> e923501681cb74baf098b020398bea291c1eebe3
 
 ## Overview
 
