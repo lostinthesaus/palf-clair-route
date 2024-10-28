@@ -11,7 +11,7 @@ This is a highly WIP release that was pushed out due to certain circumstances me
 
 ## Mod Installation
 ### Requirements
-> Version 8.21b.23 of PAL:F
+> Version 8.15b of PAL:F
 
 ### Installation 
 
@@ -20,7 +20,9 @@ This is a highly WIP release that was pushed out due to certain circumstances me
 
 ## Mod Features
 
-This mod does the following: it puts Clair in the Battle Academy as a potential hang out character (once certain requirements are met) and gives her a Level 2 scene. It also makes you gain a point with her while taking her class, similar to other routes. In addition, it includes a new audio track for you to jam to while doing her scene. All of these things can be utilized to potentially create your own fully-featured new character route mod, too. Eventually, once I migrate over to the mod manager, the intention is to build another walkthrough like my last one on how to do this stuff.
+This mod does the following: it puts Clair in the Battle Academy as a potential hang out character (once certain requirements are met) and gives her a Level 2 scene. It also makes you gain a point with her while taking her class, similar to other routes. In addition, it includes a new audio track for you to jam to while doing her scene.
+
+This mod is also packaged so it only includes the necessary files to use the mod, meaning that it has to be installed on-to a copy of PAL:F already downloaded and extracted. This doesn't ensure compatibility, but it does allow you to use this as a base for making your own character routes mods.
 
 ## F.A.Q. (Spoiler Warning)
 
